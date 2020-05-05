@@ -1,6 +1,6 @@
 clc;
 close all;
-
+addpath('./');  
 %% SELECT THE DATASET DIRECTORY
 sourceDirectory = uigetdir('../DATASETS', 'Select the .nii dataset folder');
 
@@ -71,14 +71,17 @@ for fileIndex = 1: 1 :length(niiFiles)
                 data = mat2gray(double(:,:,slice));
             end
             
-            %cropped = data(154:end, :);
+            % Apply lung mask.
+            cropped = lungMask(data);
+            % Apply filter.
+            filtered = wPngFilter(cropped, 512);
             
             % Set Filename as per slice and vol info
             pngFileName = folderName + "_slice_" + ...
                 sprintf('%03d', slice) + ".png";
             
             % Write Image
-            imwrite(data, char(pngFileName));
+            imwrite(filtered, char(pngFileName));
 
             % Move Images To Folder
             movefile(char(pngFileName), folderName);

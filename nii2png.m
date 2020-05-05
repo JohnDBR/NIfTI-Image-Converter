@@ -74,8 +74,8 @@ else
                             data = rot90(rot90(rot90(mat2gray(double(:,:,current_slice,current_volume)))));
                         end
                     elseif lower(ask_rotate) == 'n'
-                    disp('OK, I will convert it as it is.');
-                    data = mat2gray(double(:,:,current_slice,current_volume));
+                        disp('OK, I will convert it as it is.');
+                        data = mat2gray(double(:,:,current_slice,current_volume));
                     end
                     
                     % Set Filename as per slice and vol info

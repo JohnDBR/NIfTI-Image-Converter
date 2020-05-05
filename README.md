@@ -1,19 +1,22 @@
-# NIfTI Image Converter (nii2png) for Matlab
-Rejoice OpenCV users, a lightweight neuroimaging .nii to .png converter that actually works. 
+# NIfTI Image processor
+To process a dataset of tomographies from patients with #COVID-19. 
+In other to create a set of images to work with and analize its data
+this algorithm was developed.
 
-Matlab 2017b!
+We used https://raw.githubusercontent.com/alexlaurence/NIfTI-Image-Converter/master/matlab/nii2png.m as reference.
 
 ## Environment
-* Matlab 2017b
+* Matlab 2020a
 
 # Matlab Usage
-1. Add your script to your path. And run it simply by typing this and hitting enter:
+1. Download de dataset from: https://www.kaggle.com/andrewmvd/covid19-ct-scans
+2. Add the script to path and run it by typing: 
 ```
-nii2png
+niiDataset2Png
 ```
-2. Select your working directory.
-3. Select your NIfTI image.
-4. Rotate your image if you wish:
+3. Select your .nii files source folder.
+4. Select the folder in which the images are going to be stored.
+5. Rotate your image if you wish:
 ```
 >> Would you like to rotate the orientation? (y/n)
 >> y
@@ -21,9 +24,4 @@ nii2png
 >> 90
 ```
 5. Let it run.
-6. Your png files are now in the png folder of your working directory.
-
-## Download nii2png for Matlab 2017b
-Download Latest Build: [Download](https://raw.githubusercontent.com/alexlaurence/NIfTI-Image-Converter/master/matlab/nii2png.m)
-
-Download Stable Release: [Download](https://github.com/alexlaurence/NIfTI-Image-Converter/releases)
+6. Each .nii file is going to have its corresponding folder

@@ -1,4 +1,4 @@
-# NIfTI Image Converter (nii2png) for Python and Matlab
+# NIfTI Image Converter (nii2png) for Matlab
 Rejoice OpenCV users, a lightweight neuroimaging .nii to .png converter that actually works. 
 
 Matlab 2017b!

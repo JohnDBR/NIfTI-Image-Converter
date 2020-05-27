@@ -1,8 +1,8 @@
 function cropped = lungMask(data)
-I = data;
+I = uint8(data);
 
 %% Threshold to isolate lungs.
-thresholded = I < 0.3;
+thresholded = I < 0.9;
 
 %% Remove the border.
 clearThresh = imclearborder(thresholded);
@@ -11,7 +11,7 @@ clearThresh = imclearborder(thresholded);
 cleared = bwareaopen(clearThresh,100); 
 
 %% Fill in the vessels inside the lungs.
-filled = imfill(cleared,'hole');
+filled = uint8(imfill(cleared,'hole'));
 
 cropped = filled.*I;
 end

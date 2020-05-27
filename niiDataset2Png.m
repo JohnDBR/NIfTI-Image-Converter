@@ -73,8 +73,10 @@ for fileIndex = 1: 1 :length(niiFiles)
             
             % Apply lung mask.
             cropped = lungMask(data);
+            %resize
+            filtered = imresize(cropped,[512 512]);
             % Apply filter.
-            filtered = wPngFilter(cropped, 512);
+            %filtered = wPngFilter(cropped, 512);
             
             % Set Filename as per slice and vol info
             pngFileName = folderName + "_slice_" + ...
